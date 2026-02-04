@@ -14,7 +14,12 @@ altair<5
 scikit-learn
 
 openpyxl 
-
+streamlit
+pandas
+openpyxl
+scikit-learn
+pyarrow>=14.0.1 
+plotly
 joblib
 
 plotly
