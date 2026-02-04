@@ -10,7 +10,7 @@ xlrd
 streamlit
 
 pandas
-
+altair<5
 scikit-learn
 
 openpyxl 
