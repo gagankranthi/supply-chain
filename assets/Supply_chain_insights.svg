@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='200'>
+  <defs>
+    <linearGradient id='g' x1='0' x2='1'>
+      <stop offset='0' stop-color='#06b6d4'/>
+      <stop offset='1' stop-color='#0ea5a4'/>
+    </linearGradient>
+  </defs>
+  <rect width='100%' height='100%' fill='url(#g)' rx='12'/>
+  <text x='50%' y='50%' font-size='36' fill='white' text-anchor='middle' alignment-baseline='middle' font-family='sans-serif'>Supply Chain Insights</text>
+</svg>
