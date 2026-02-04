@@ -46,8 +46,20 @@ def load_excel():
     if not os.path.exists(EXCEL_PATH):
         st.error("Dataset not found. Please ensure 'Supply chain logistics problem.xlsx' is in the folder.")
         st.stop()
-    return pd.read_excel(EXCEL_PATH)
-
+    
+    df = pd.read_excel(EXCEL_PATH)
+    
+    # --- FIX FOR "LargeUtf8" ERROR ---
+    # This converts "LargeUtf8" and "Object" types to standard strings
+    # which prevents the frontend decoding error.
+    for col in df.columns:
+        if df[col].dtype == object or str(df[col].dtype) == 'string':
+            df[col] = df[col].astype(str)
+            
+    # Additionally, handle any potential mixed types that cause Arrow issues
+    df = df.infer_objects()
+    
+    return df
 @st.cache_resource
 def train_internal_model(df_input, target_col):
     """Trains the model in memory. No .joblib file is created."""
